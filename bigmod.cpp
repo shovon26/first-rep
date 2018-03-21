@@ -2,17 +2,10 @@
 using namespace std;
 int bigmod(int a,int b,int m)
 {
-  int ans=1;
-  while(b)
-  {
-    if(b&1)
-    {
-      ans=(ans*a)%m;
-    }
-      b>>=1;
-      a=(a*a)%m;
-  }
-  return ans%m;
+  if(n==0) return 1;
+  else if(n%2==0)
+    return bigmod((x*x)%m,n/2,m);
+ else return (x*bigmod((x*x)%m,(n-1)/2,m))%m;
 }
 int main()
 {
